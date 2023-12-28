@@ -1,0 +1,16 @@
+<% if @error_message.present? %>
+  <%= turbo_stream.replace "error-message" do %>
+    <div id="error-message">
+      <div class="alert alert-danger"><%= @error_message %></div>
+    </div>
+  <% end %>
+<% else %>
+  <%= turbo_stream.replace "error-message" do %>
+    <div id="error-message"></div>
+  <% end %>
+  <%= turbo_stream.replace "task-form" do %>
+    <div id="task-form">
+      <%= render partial: "form", locals: { task: @task, hide_title: true } %>
+    </div>
+  <% end %>
+<% end %>
