@@ -1,0 +1,11 @@
+<h2 class="mb-4">User Portfolio</h2>
+
+<div class="mb-3">
+<p><strong>Email:</strong> <%= @user.email %></p>
+</div>
+
+<div class="mb-3">
+<p><strong>Portfolio Url:</strong> <%= link_to @user.portfolio_url, @user.portfolio_url, class: 'btn btn-link' %></p>
+</div>
+
+<%= link_to 'Back', root_path, class: 'btn btn-secondary' %>
